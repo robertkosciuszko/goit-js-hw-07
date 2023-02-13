@@ -6,6 +6,9 @@ console.log(galleryItems)
 const gallery = document.querySelector('.gallery')
 const items = []
 
+
+//creation of the gallery
+
 galleryItems.forEach(element => {
 	const galleryItem = document.createElement('div')
 	galleryItem.className = 'gallery__item'
@@ -25,6 +28,10 @@ galleryItems.forEach(element => {
 
 gallery.append(...items)
 
+
+//photo enlargement
+
+
 gallery.addEventListener('click', e => {
     e.preventDefault();
     if (e.target.nodeName !== 'IMG') {
@@ -39,6 +46,8 @@ gallery.addEventListener('click', e => {
 
     instance.show()
     
+//adding a close key
+
     gallery.addEventListener('keydown', e => {
 		if (e.key === 'Escape') {
 			instance.close()
